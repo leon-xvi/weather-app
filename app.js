@@ -14,10 +14,7 @@ window.addEventListener('load', () => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
 
-      // API is not working because of too many requests right now.
-      // const proxy = "https://cors-anywhere.herokuapp.com/";
-      // const api = `${proxy}https://api.darksky.net/forecast/a4e0084ab49a48d5b3905ae5a085890c/${lat},${long}`;
-      const api = 'http://localhost:3000/exampleResponse';
+      const api = `https://api.darksky.net/forecast/a4e0084ab49a48d5b3905ae5a085890c/${lat},${long}`;
 
       fetch(api)
         .then(response => {
@@ -50,7 +47,6 @@ window.addEventListener('load', () => {
   }
 
   // convert celcius to fahrenheit and vice versa
-
   function setIcons(icon, iconID) {
     const skycons = new Skycons({ color: 'white' });
     const currentIcon = icon.replace(/-/g, '_').toUpperCase();
